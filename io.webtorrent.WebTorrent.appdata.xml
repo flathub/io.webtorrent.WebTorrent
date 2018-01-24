@@ -1,7 +1,7 @@
 <!-- Copyright 2017 Feross Aboukhadijeh and WebTorrent, LLC -->
 <?xml version='1.0' encoding='UTF-8'?>
 <component>
-  <id type="desktop">webtorrent.desktop</id>
+  <id type="desktop">io.webtorrent.WebTorrent.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <name>WebTorrent</name>
   <project_license>MIT</project_license>
