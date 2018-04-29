@@ -38,15 +38,15 @@
         {
           "type": "file",
           "only-arches": ["x86_64"],
-          "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.19.0/webtorrent-desktop_0.19.0-1_amd64.deb",
-          "sha256": "ed69924d6bf980162f109e0d0a62ce29de706867178c3fcbe3b23f8cdc7e8e6c",
+          "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.20.0/webtorrent-desktop_0.20.0-1_amd64.deb",
+          "sha256": "33a0239c5c5a614730bc5ce6c7067b49b5b65619965e6e85bde5c658e3b279ce",
           "dest-filename": "webtorrent.deb"
         },
         {
           "type": "file",
           "only-arches": ["i386"],
-          "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.19.0/webtorrent-desktop_0.19.0-1_i386.deb",
-          "sha256": "ecf149b50ea92597301f5f6129ba769bf00f234ef57f39b2a8473a9597fe6ca8",
+          "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.20.0/webtorrent-desktop_0.20.0-1_i386.deb",
+          "sha256": "80f222cd41378deb8f7b57abb7939015ac41a6c03e10bca596f956d195f9dd79",
           "dest-filename": "webtorrent.deb"
         },
         {
