@@ -1,11 +1,10 @@
 {
   "app-id": "io.webtorrent.WebTorrent",
-  "branch": "stable",
   "base": "io.atom.electron.BaseApp",
-  "base-version": "stable",
-  "runtime": "org.gnome.Platform",
-  "runtime-version": "3.26",
-  "sdk": "org.gnome.Sdk",
+  "base-version": "18.08",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "18.08",
+  "sdk": "org.freedesktop.Sdk",
   "command": "WebTorrent",
   "rename-icon": "webtorrent-desktop",
   "separate-locales": false,
@@ -34,8 +33,7 @@
       "cleanup": [
         "/share/doc"
       ],
-      "sources": [
-        {
+      "sources": [{
           "type": "file",
           "only-arches": ["x86_64"],
           "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.20.0/webtorrent-desktop_0.20.0-1_amd64.deb",
