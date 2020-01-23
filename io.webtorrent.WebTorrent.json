@@ -21,20 +21,6 @@
   ],
   "modules": [
     {
-        "name": "wrapper",
-        "buildsystem": "simple",
-        "build-commands": [
-            "install -m755 webtorrent-wrapper /app/bin"
-        ],
-        "sources": [{
-            "type": "script",
-            "dest-filename": "webtorrent-wrapper",
-            "commands": [
-                "webtorrent-desktop --no-sandbox"
-            ]
-        }]
-    },
-    {
       "name": "webtorrent",
       "buildsystem": "simple",
       "build-commands": [
@@ -42,15 +28,15 @@
         "tar -xf data.tar.xz",
         "cp -r usr/* /app",
         "chmod +x /app/bin/webtorrent-desktop",
+        "install -m755 webtorrent-wrapper /app/bin",
         "install -Dm644 io.webtorrent.WebTorrent.metainfo.xml /app/share/metainfo/io.webtorrent.WebTorrent.metainfo.xml"
       ],
       "post-install": [
-          "sed -i s:Exec=webtorrent-desktop:Exec=/app/bin/webtorrent-wrapper: /app/share/applications/webtorrent-desktop.desktop"
+        "desktop-file-edit --set-key=Version --set-value=1.0 --set-key=Exec --set-value=webtorrent-wrapper /app/share/applications/webtorrent-desktop.desktop"
       ],
-      "cleanup": [
-        "/share/doc"
-      ],
-      "sources": [{
+      "cleanup": ["/share/doc"],
+      "sources": [
+        {
           "type": "file",
           "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.21.0/webtorrent-desktop_0.21.0_amd64.deb",
           "sha256": "35ef3c0d3d3f0dc25e6d15246894dd8259954866f04ae9c72543fca274715504",
@@ -59,6 +45,11 @@
         {
           "type": "file",
           "path": "io.webtorrent.WebTorrent.metainfo.xml"
+        },
+        {
+          "type": "script",
+          "dest-filename": "webtorrent-wrapper",
+          "commands": ["webtorrent-desktop --no-sandbox"]
         }
       ]
     }

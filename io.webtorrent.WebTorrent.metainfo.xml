@@ -2,29 +2,31 @@
 <!-- Copyright 2017 Feross Aboukhadijeh and WebTorrent, LLC -->
 <component type="desktop-application">
   <id>io.webtorrent.WebTorrent</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
   <name>WebTorrent</name>
   <summary>Streaming torrent app</summary>
   <description>
+    <p>
     WebTorrent Desktop is for streaming torrents. Whether it's video from the Internet Archive, music from Creative
     Commons, or audiobooks from Librivox,
-    you can play it right away. You don't have to wait for it to finish downloading.
+    you can play it right away. You don't have to wait for it to finish downloading.    
+    </p>
   </description>
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_license>MIT</project_license>
   <screenshots>
-    <screenshot type="default">
-      <image>https://webtorrent.io/img/screenshot-player2.png</image>
-    </screenshot>
+      <screenshot type="default">
+        <image>https://webtorrent.io/img/screenshot-player2.png</image>
+      </screenshot>
   </screenshots>
-  <releases>
-    <release date="2019-09-15" version="0.2.1" />
-  </releases>
   <url type="homepage">https://webtorrent.io/desktop/</url>
   <url type="bugtracker">https://github.com/webtorrent/webtorrent-desktop/issues</url>
   <url type="donation">https://github.com/users/feross/sponsorship</url>
+  <content_rating type="oars-1.0" />
+  <releases>
+    <release date="2019-09-15" version="0.2.1" />
+  </releases>
+  <developer_name>Feross Aboukhadijeh</developer_name>
   <update_contact>https://gitter.im/webtorrent/webtorrent</update_contact>
   <launchable type="desktop-id">io.webtorrent.WebTorrent.desktop</launchable>
-  <translation type="gettext">webtorrent</translation>
-  <content_rating type="oars-1.1" />
-  <developer_name>Feross Aboukhadijeh</developer_name>
 </component>
+
