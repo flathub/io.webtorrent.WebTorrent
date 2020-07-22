@@ -23,7 +23,7 @@
   <url type="donation">https://github.com/users/feross/sponsorship</url>
   <content_rating type="oars-1.0" />
   <releases>
-    <release date="2019-09-15" version="0.2.1" />
+    <release date="2020-07-16" version="0.2.3" />
   </releases>
   <developer_name>Feross Aboukhadijeh</developer_name>
   <update_contact>https://gitter.im/webtorrent/webtorrent</update_contact>
