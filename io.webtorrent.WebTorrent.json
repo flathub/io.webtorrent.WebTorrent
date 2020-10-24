@@ -1,9 +1,9 @@
 {
   "app-id": "io.webtorrent.WebTorrent",
   "base": "org.electronjs.Electron2.BaseApp",
-  "base-version": "19.08",
+  "base-version": "20.08",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "19.08",
+  "runtime-version": "20.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "webtorrent-wrapper",
   "rename-icon": "webtorrent-desktop",
@@ -15,7 +15,7 @@
     "--socket=pulseaudio",
     "--share=network",
     "--device=dri",
-    "--filesystem=home",
+    "--filesystem=xdg-download",
     "--filesystem=/tmp",
     "--talk-name=org.freedesktop.Notifications"
   ],
@@ -38,8 +38,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.23.0/webtorrent-desktop_0.23.0_amd64.deb",
-          "sha256": "4d55f115c6903682f4ed5f2f68894694e7027732c3d3d957165d522fdb71391e",
+          "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.24.0/webtorrent-desktop_0.24.0_amd64.deb",
+          "sha256": "2110c6e81f2ebeae74e8194ec49e80f8357573c57222d2d472623355fb1307b0",
           "dest-filename": "webtorrent.deb"
         },
         {
