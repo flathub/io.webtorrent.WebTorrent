@@ -15,7 +15,7 @@
     "--socket=pulseaudio",
     "--share=network",
     "--device=dri",
-    "--filesystem=home",
+    "--filesystem=xdg-download",
     "--filesystem=/tmp",
     "--talk-name=org.freedesktop.Notifications"
   ],
