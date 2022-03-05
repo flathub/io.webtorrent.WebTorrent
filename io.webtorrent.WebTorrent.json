@@ -29,6 +29,8 @@
         "cp -r usr/* /app",
         "chmod +x /app/bin/webtorrent-desktop",
         "install -m755 webtorrent-wrapper /app/bin",
+        "install -m755 xdg-open-wrapper /app/bin/xdg-open-wrapper",
+        "install -m755 set-external-player /app/bin/set-external-player",
         "install -Dm644 io.webtorrent.WebTorrent.metainfo.xml /app/share/metainfo/io.webtorrent.WebTorrent.metainfo.xml"
       ],
       "post-install": [
@@ -49,7 +51,19 @@
         {
           "type": "script",
           "dest-filename": "webtorrent-wrapper",
-          "commands": ["exec zypak-wrapper /app/bin/webtorrent-desktop \"$@\""]
+          "commands": [
+            "sh /app/bin/set-external-player",
+            "exec zypak-wrapper /app/bin/webtorrent-desktop \"$@\""
+          ]
+        },
+        {
+          "type": "file",
+          "path": "xdg-open-wrapper"
+        },
+        {
+          "type": "file",
+          "path": "set-external-player"
+
         }
       ]
     }
