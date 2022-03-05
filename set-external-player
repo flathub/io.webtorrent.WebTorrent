@@ -1,0 +1,9 @@
+#!/bin/sh
+
+CONFIG_FILE=".var/app/io.webtorrent.WebTorrent/config/WebTorrent/config.json"
+
+if [ -f $CONFIG_FILE ]; then
+    sed 's/"externalPlayerPath": ""/"externalPlayerPath": "\/app\/bin\/xdg-open-wrapper"/g' -i $CONFIG_FILE
+fi
+
+exit
