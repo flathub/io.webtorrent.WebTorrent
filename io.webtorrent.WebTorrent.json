@@ -38,8 +38,16 @@
       "sources": [
         {
           "type": "file",
+          "only-arches": ["x86_64"],
           "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.24.0/webtorrent-desktop_0.24.0_amd64.deb",
           "sha256": "2110c6e81f2ebeae74e8194ec49e80f8357573c57222d2d472623355fb1307b0",
+          "dest-filename": "webtorrent.deb"
+        },
+        {
+          "type": "file",
+          "only-arches": ["aarch64"],
+          "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.24.0/webtorrent-desktop_0.24.0_arm64.deb",
+          "sha256": "408e37bc11326e99fc3dd40eb20d28767ccb02fd261b400b9e1cc2a90bb1619b",
           "dest-filename": "webtorrent.deb"
         },
         {
