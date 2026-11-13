@@ -1,57 +1,61 @@
 {
-  "app-id": "io.webtorrent.WebTorrent",
-  "base": "org.electronjs.Electron2.BaseApp",
-  "base-version": "24.08",
-  "runtime": "org.freedesktop.Platform",
-  "runtime-version": "24.08",
-  "sdk": "org.freedesktop.Sdk",
-  "command": "webtorrent-wrapper",
-  "rename-icon": "webtorrent-desktop",
-  "rename-desktop-file": "webtorrent-desktop.desktop",
-  "separate-locales": false,
-  "finish-args": [
-    "--share=ipc",
-    "--socket=x11",
-    "--socket=pulseaudio",
-    "--share=network",
-    "--device=dri",
-    "--filesystem=xdg-download",
-    "--filesystem=/tmp",
-    "--talk-name=org.freedesktop.Notifications"
-  ],
-  "modules": [
-    {
-      "name": "webtorrent",
-      "buildsystem": "simple",
-      "build-commands": [
-        "ar x webtorrent.deb",
-        "tar -xf data.tar.xz",
-        "cp -r usr/* /app",
-        "chmod +x /app/bin/webtorrent-desktop",
-        "install -m755 webtorrent-wrapper /app/bin",
-        "install -Dm644 io.webtorrent.WebTorrent.metainfo.xml /app/share/metainfo/io.webtorrent.WebTorrent.metainfo.xml"
-      ],
-      "post-install": [
-        "desktop-file-edit --set-key=Version --set-value=1.0 --set-key=Exec --set-value=webtorrent-wrapper /app/share/applications/webtorrent-desktop.desktop"
-      ],
-      "cleanup": ["/share/doc"],
-      "sources": [
+    "app-id": "io.webtorrent.WebTorrent",
+    "base": "org.electronjs.Electron2.BaseApp",
+    "base-version": "26.08",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "26.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "webtorrent-wrapper",
+    "rename-icon": "webtorrent-desktop",
+    "rename-desktop-file": "webtorrent-desktop.desktop",
+    "separate-locales": false,
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=pulseaudio",
+        "--share=network",
+        "--device=dri",
+        "--filesystem=xdg-download",
+        "--filesystem=/tmp",
+        "--talk-name=org.freedesktop.Notifications"
+    ],
+    "modules": [
         {
-          "type": "file",
-          "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.24.0/webtorrent-desktop_0.24.0_amd64.deb",
-          "sha256": "2110c6e81f2ebeae74e8194ec49e80f8357573c57222d2d472623355fb1307b0",
-          "dest-filename": "webtorrent.deb"
-        },
-        {
-          "type": "file",
-          "path": "io.webtorrent.WebTorrent.metainfo.xml"
-        },
-        {
-          "type": "script",
-          "dest-filename": "webtorrent-wrapper",
-          "commands": ["exec zypak-wrapper /app/bin/webtorrent-desktop \"$@\""]
+            "name": "webtorrent",
+            "buildsystem": "simple",
+            "build-commands": [
+                "ar x webtorrent.deb",
+                "tar -xf data.tar.xz",
+                "cp -r usr/* /app",
+                "chmod +x /app/bin/webtorrent-desktop",
+                "install -m755 webtorrent-wrapper /app/bin",
+                "install -Dm644 io.webtorrent.WebTorrent.metainfo.xml -t /app/share/metainfo/"
+            ],
+            "post-install": [
+                "desktop-file-edit --set-key=Version --set-value=1.0 --set-key=Exec --set-value=webtorrent-wrapper /app/share/applications/webtorrent-desktop.desktop"
+            ],
+            "cleanup": [
+                "/share/doc"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.24.0/webtorrent-desktop_0.24.0_amd64.deb",
+                    "sha256": "2110c6e81f2ebeae74e8194ec49e80f8357573c57222d2d472623355fb1307b0",
+                    "dest-filename": "webtorrent.deb"
+                },
+                {
+                    "type": "file",
+                    "path": "io.webtorrent.WebTorrent.metainfo.xml"
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "webtorrent-wrapper",
+                    "commands": [
+                        "exec zypak-wrapper /app/bin/webtorrent-desktop \"$@\""
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
